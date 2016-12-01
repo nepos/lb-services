@@ -227,7 +227,7 @@ module.factory("lbDevice",
          *
          * @param {Object} postData Request data.
          *
-         *  - `deviceId` – `{integer=}` - device id
+         *  - `deviceNumber` – `{integer=}` - device number
          *
          *  - `version` – `{string=}` - version string to send to the device
          *
@@ -303,7 +303,7 @@ module.factory("lbDevice",
          *
          * @param {Object} postData Request data.
          *
-         *  - `deviceId` – `{integer=}` - device number
+         *  - `deviceNumber` – `{integer=}` - device number
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -11301,6 +11301,39 @@ module.factory("lbVideocall",
          */
         "getUpcomingList": {
           url: urlBase + "/videocalls/upcomingList",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Videocall#getFilters
+         * @methodOf lbServices.Videocall
+         *
+         * @description
+         *
+         * get filters for upcoming video calls
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `filters` – `{Array=}` - list of all video call types
+         */
+        "getFilters": {
+          url: urlBase + "/videocalls/filters",
           method: "GET"
         },
 
