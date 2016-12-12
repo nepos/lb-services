@@ -12291,6 +12291,314 @@ module.factory("lbContext",
     return R;
   }]);
 
+/**
+ * @ngdoc object
+ * @name lbServices.Video
+ * @header lbServices.Video
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Video` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory("lbVideo",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/videos/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#getCategories
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * get all video categories for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoCategories` – `{object=}` - list of all video categories of the user
+         */
+        "getCategories": {
+          url: urlBase + "/videos/getCategories",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#getPlaylists
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * get all available playlists according a channel id
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `channelId` – `{string}` - channel string id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoPlaylists` – `{object=}` - list all playlists for one channel
+         */
+        "getPlaylists": {
+          url: urlBase + "/videos/getPlaylists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#isFavourite
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * check favourite video for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `videoId` – `{string}` - video string id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `isFavourite` – `{boolean=}` - check favourite videos
+         */
+        "isFavourite": {
+          url: urlBase + "/videos/isFavourite",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#addFavourite
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * add favourite video for current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `videoId` – `{string}` - video string id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `favouriteVideo` – `{Object=}` - return created favouriteVideo
+         */
+        "addFavourite": {
+          url: urlBase + "/videos",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#getItem
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * get video item Object
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `videoId` – `{string}` - video string id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoItem` – `{object=}` - get video item Object
+         */
+        "getItem": {
+          url: urlBase + "/videos/getItem",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#getList
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * get video List
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `categoryId` – `{string=}` - category string id
+         *
+         *  - `playlistId` – `{string=}` - eventually playlist string id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoList` – `{object=}` - get video List
+         */
+        "getList": {
+          url: urlBase + "/videos/getList",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#updateYtAll
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * fresh our database and fetch all video from API
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoList` – `{Object=}` - 
+         */
+        "updateYtAll": {
+          url: urlBase + "/videos/updateAll",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Video#getSuggestions
+         * @methodOf lbServices.Video
+         *
+         * @description
+         *
+         * get related video List
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `videoId` – `{string=}` - video identifier
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `videoList` – `{object=}` - get related video List
+         */
+        "getSuggestions": {
+          url: urlBase + "/videos/getSuggestions",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Video#modelName
+    * @propertyOf lbServices.Video
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Video`.
+    */
+    R.modelName = "Video";
+
+
+    return R;
+  }]);
+
 
 module
   .factory('LoopBackAuth', function() {
