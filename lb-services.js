@@ -217,6 +217,195 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.Device#postUpdateDevice
+             * @methodOf lbServices.Device
+             *
+             * @description
+             *
+             * send push notification to specified device
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `deviceNumber` – `{integer=}` - device number
+             *
+             *  - `version` – `{string=}` - version string to send to the device
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `message` – `{string=}` - Just a nice info for you
+             */
+            "postUpdateDevice": {
+              url: urlBase + "/devices/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Device#postUpdateAllDevices
+             * @methodOf lbServices.Device
+             *
+             * @description
+             *
+             * send push notification to all devices
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `version` – `{string=}` - version string to send to the devices
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `message` – `{string=}` - Just a nice info for you
+             */
+            "postUpdateAllDevices": {
+              url: urlBase + "/devices/updateAll",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Device#postCancelUpdate
+             * @methodOf lbServices.Device
+             *
+             * @description
+             *
+             * send cancel update notification to specified device
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `deviceNumber` – `{integer=}` - device number
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `message` – `{string=}` - Just a nice info for you
+             */
+            "postCancelUpdate": {
+              url: urlBase + "/devices/update/cancel",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Device#postCancelAllUpdates
+             * @methodOf lbServices.Device
+             *
+             * @description
+             *
+             * send cancel update notification to all devices
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method does not accept any data. Supply an empty object.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `message` – `{string=}` - Just a nice info for you
+             */
+            "postCancelAllUpdates": {
+              url: urlBase + "/devices/updateAll/cancel",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Device#postControlData
+             * @methodOf lbServices.Device
+             *
+             * @description
+             *
+             * post token for push notification and current running version for a device-id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `id` – `{string=}` - Tablet Device-ID
+             *
+             *  - `ionicToken` – `{string=}` - The device token form ionic push notification
+             *
+             *  - `deviceVersion` – `{string=}` - The device current running version
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "postControlData": {
+              url: urlBase + "/devices/controldata",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.Device#postIonicToken
              * @methodOf lbServices.Device
              *
@@ -1471,7 +1660,15 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * @param {Object} postData Request data.
              *
-             *  - `userData` – `{Object=}` - usr data object{ username, password, email, token, [gender]}
+             *  - `username` – `{string=}` - username
+             *
+             *  - `password` – `{string=}` - password
+             *
+             *  - `email` – `{string=}` - email
+             *
+             *  - `token` – `{string=}` - token
+             *
+             *  - `gender` – `{string=}` - gender
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -11148,6 +11345,39 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.Videocall#getFilters
+             * @methodOf lbServices.Videocall
+             *
+             * @description
+             *
+             * get filters for upcoming video calls
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `filters` – `{Array=}` - list of all video call types
+             */
+            "getFilters": {
+              url: urlBase + "/videocalls/filters",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.Videocall#getByToken
              * @methodOf lbServices.Videocall
              *
@@ -11760,6 +11990,43 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.Bookmark#postInitUser
+             * @methodOf lbServices.Bookmark
+             *
+             * @description
+             *
+             * create bookmark for current user
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `aUserId` – `{Integer=}` - user Id that should be initialized
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookmark` – `{Object=}` - return created bookmark
+             */
+            "postInitUser": {
+              url: urlBase + "/bookmarks/initUser",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.Bookmark#postHistory
              * @methodOf lbServices.Bookmark
              *
@@ -12067,6 +12334,624 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         * i.e. `Context`.
         */
         R.modelName = "Context";
+
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Video
+ * @header lbServices.Video
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Video` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory("lbVideo",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector',
+      function(Resource, LoopBackAuth, $injector) {
+        var R = Resource(
+        urlBase + "/videos/:id",
+          { 'id': '@id' },
+          {
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#getCategories
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * get all video categories for the current user
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `videoCategories` – `{object=}` - list of all video categories of the user
+             */
+            "getCategories": {
+              url: urlBase + "/videos/getCategories",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#getPlaylists
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * get all available playlists according a channel id
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `channelId` – `{string}` - channel string id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `videoPlaylists` – `{object=}` - list all playlists for one channel
+             */
+            "getPlaylists": {
+              url: urlBase + "/videos/getPlaylists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#isFavourite
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * check favourite video for the current user
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `videoId` – `{string}` - video string id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `isFavourite` – `{boolean=}` - check favourite videos
+             */
+            "isFavourite": {
+              url: urlBase + "/videos/isFavourite",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#addFavourite
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * add favourite video for current user
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `videoId` – `{string}` - video string id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `favouriteVideo` – `{Object=}` - return created favouriteVideo
+             */
+            "addFavourite": {
+              url: urlBase + "/videos",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#getItem
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * get video item Object
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `videoId` – `{string}` - video string id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `videoItem` – `{object=}` - get video item Object
+             */
+            "getItem": {
+              url: urlBase + "/videos/getItem",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#getList
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * get video List
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `categoryId` – `{string=}` - category string id
+             *
+             *  - `playlistId` – `{string=}` - eventually playlist string id
+             *
+             *  - `filter` – `{Object=}` - filter for query
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `videoList` – `{object=}` - get video List
+             */
+            "getList": {
+              url: urlBase + "/videos/getList",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#updateYtAll
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * fresh our database with video from API
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `updateWithSuccess` – `{Boolean=}` -
+             */
+            "updateYtAll": {
+              url: urlBase + "/videos/updateAll",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#getSuggestions
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * get related video List
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `videoId` – `{string=}` - video identifier
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `videoList` – `{object=}` - get related video List
+             */
+            "getSuggestions": {
+              url: urlBase + "/videos/getSuggestions",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.Video#modelName
+        * @propertyOf lbServices.Video
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `Video`.
+        */
+        R.modelName = "Video";
+
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Audiobook
+ * @header lbServices.Audiobook
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Audiobook` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory("lbAudiobook",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector',
+      function(Resource, LoopBackAuth, $injector) {
+        var R = Resource(
+        urlBase + "/audiobooks/:id",
+          { 'id': '@id' },
+          {
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#isFavourite
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `audiobookId` – `{Number=}` - the id of audiobook (0 < id < 31)
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `isFavourite` – `{Boolean=}` - self explainatory
+             */
+            "isFavourite": {
+              url: urlBase + "/audiobooks/isFavourite",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#addFavourite
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `audiobookId` – `{Number=}` - The id of audiobook (0 < id < 31)
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `audiobookDetail` – `{Object=}` - The audiobookDetail object
+             */
+            "addFavourite": {
+              url: urlBase + "/audiobooks/addFavourite",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getList
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `category` – `{String=}` - one of: new, favourite, lastHeard, author, title
+             *
+             *  - `subcategory` – `{String=}` -
+             *
+             *  - `skip` – `{Number=}` -
+             *
+             *  - `limit` – `{Number=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookDetails` – `{Array=}` - The array of audiobook data objects
+             */
+            "getList": {
+              url: urlBase + "/audiobooks",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getContent
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `bookId` – `{Number=}` - id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookContent` – `{Object=}` - The array of audiobook data objects
+             */
+            "getContent": {
+              url: urlBase + "/audiobooks/getContent",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#setProgress
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `bookId` – `{Number=}` - id
+             *
+             *  - `chapter` – `{Number=}` - cahpter
+             *
+             *  - `time` – `{Number=}` - time in seconds
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookContent` – `{Object=}` - The array of audiobook data objects
+             */
+            "setProgress": {
+              url: urlBase + "/audiobooks/setProgress",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getCategories
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `categories` – `{Array=}` - The array of audiobook data objects
+             */
+            "getCategories": {
+              url: urlBase + "/audiobooks/getCategories",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getSubcategories
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `categoryName` – `{String=}` - self explainatory
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `subcategories` – `{Array=}` - The array of audiobook data objects
+             */
+            "getSubcategories": {
+              url: urlBase + "/audiobooks/getSubcategories",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.Audiobook#modelName
+        * @propertyOf lbServices.Audiobook
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `Audiobook`.
+        */
+        R.modelName = "Audiobook";
 
 
 
