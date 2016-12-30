@@ -891,6 +891,121 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.User#prototype$__findById__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Find a related item by id for favoriteVideos.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for favoriteVideos
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__findById__favoriteVideos": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/favoriteVideos/:fk",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__destroyById__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Delete a related item by id for favoriteVideos.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for favoriteVideos
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__destroyById__favoriteVideos": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/favoriteVideos/:fk",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__updateById__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Update a related item by id for favoriteVideos.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for favoriteVideos
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__updateById__favoriteVideos": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/favoriteVideos/:fk",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.User#prototype$__get__accessTokens
              * @methodOf lbServices.User
              *
@@ -1209,6 +1324,143 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use User.videocalls.count() instead.
             "prototype$__count__videocalls": {
               url: urlBase + "/users/:id/videocalls/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__get__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Queries favoriteVideos of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__get__favoriteVideos": {
+              isArray: true,
+              url: urlBase + "/users/:id/favoriteVideos",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__create__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Creates a new instance in favoriteVideos of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__create__favoriteVideos": {
+              url: urlBase + "/users/:id/favoriteVideos",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__delete__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Deletes all favoriteVideos of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__delete__favoriteVideos": {
+              url: urlBase + "/users/:id/favoriteVideos",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__count__favoriteVideos
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Counts favoriteVideos of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "prototype$__count__favoriteVideos": {
+              url: urlBase + "/users/:id/favoriteVideos/count",
               method: "GET",
             },
 
@@ -12410,7 +12662,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * @param {Object=} parameters Request parameters.
              *
-             *  - `channelId` – `{string}` - channel string id
+             *  - `categoryName` – `{string}` - category name
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -12496,8 +12748,38 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *  - `favouriteVideo` – `{Object=}` - return created favouriteVideo
              */
             "addFavourite": {
-              url: urlBase + "/videos",
+              url: urlBase + "/videos/addFavourite",
               method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Video#removeFavourite
+             * @methodOf lbServices.Video
+             *
+             * @description
+             *
+             * remove favorite video list for current user
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `videoIdList` – `{*=}` - array of video id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "removeFavourite": {
+              url: urlBase + "/videos/removeFavourite",
+              method: "DELETE",
             },
 
             /**
