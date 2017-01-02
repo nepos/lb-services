@@ -12825,7 +12825,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * @param {Object=} parameters Request parameters.
              *
-             *  - `categoryId` – `{string=}` - category string id
+             *  - `categoryName` – `{string=}` - category name
              *
              *  - `playlistId` – `{string=}` - eventually playlist string id
              *
