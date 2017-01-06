@@ -58,9 +58,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbDevice",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/devices/:id",
           { 'id': '@id' },
           {
@@ -581,9 +581,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbUser",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/users/:id",
           { 'id': '@id' },
           {
@@ -2324,6 +2324,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
                 response: function(response) {
                   LoopBackAuth.currentUserData = response.data;
                   return response.resource;
+                },
+                responseError: function(responseError) {
+                  LoopBackAuth.clearUser();
+                  LoopBackAuth.clearStorage();
+                  return $q.reject(responseError);
                 },
               },
               __isGetCurrentUser__: true,
@@ -4574,9 +4579,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbMood",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/moods/:id",
           { 'id': '@id' },
           {
@@ -4917,9 +4922,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbTrack",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/tracks/:id",
           { 'id': '@id' },
           {
@@ -5217,9 +5222,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbCategory",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/categories/:id",
           { 'id': '@id' },
           {
@@ -5553,9 +5558,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbContact",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/contacts/:id",
           { 'id': '@id' },
           {
@@ -7562,9 +7567,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbMailaccount",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/mailaccounts/:id",
           { 'id': '@id' },
           {
@@ -7987,9 +7992,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbMessage",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/messages/:id",
           { 'id': '@id' },
           {
@@ -9459,9 +9464,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbPicturestore",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/picturestores/:id",
           { 'id': '@id' },
           {
@@ -9913,9 +9918,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbPicture",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/pictures/:id",
           { 'id': '@id' },
           {
@@ -11467,9 +11472,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbVideocall",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/videocalls/:id",
           { 'id': '@id' },
           {
@@ -12410,9 +12415,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbBookmark",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/bookmarks/:id",
           { 'id': '@id' },
           {
@@ -12702,9 +12707,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbNotification",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/notifications/:id",
           { 'id': '@id' },
           {
@@ -12783,9 +12788,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbContext",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/contexts/:id",
           { 'id': '@id' },
           {
@@ -12863,9 +12868,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbVideo",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/videos/:id",
           { 'id': '@id' },
           {
@@ -13206,9 +13211,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
  */
   module.factory("lbAudiobook",
     [
-      'LoopBackResource', 'LoopBackAuth', '$injector',
-      function(Resource, LoopBackAuth, $injector) {
-        var R = Resource(
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
         urlBase + "/audiobooks/:id",
           { 'id': '@id' },
           {
@@ -13369,6 +13374,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * @param {Object=} parameters Request parameters.
              *
              *  - `bookId` – `{Number=}` - id
+             *
+             *  - `filter` – `{Object=}` - query filter object
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
