@@ -1006,6 +1006,121 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.User#prototype$__findById__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Find a related item by id for abUserBooks.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for abUserBooks
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__findById__abUserBooks": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/abUserBooks/:fk",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__destroyById__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Delete a related item by id for abUserBooks.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for abUserBooks
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__destroyById__abUserBooks": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/abUserBooks/:fk",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__updateById__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Update a related item by id for abUserBooks.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for abUserBooks
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__updateById__abUserBooks": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/abUserBooks/:fk",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.User#prototype$__get__accessTokens
              * @methodOf lbServices.User
              *
@@ -1461,6 +1576,143 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              */
             "prototype$__count__favoriteVideos": {
               url: urlBase + "/users/:id/favoriteVideos/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__get__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Queries abUserBooks of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__get__abUserBooks": {
+              isArray: true,
+              url: urlBase + "/users/:id/abUserBooks",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__create__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Creates a new instance in abUserBooks of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `User` object.)
+             * </em>
+             */
+            "prototype$__create__abUserBooks": {
+              url: urlBase + "/users/:id/abUserBooks",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__delete__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Deletes all abUserBooks of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__delete__abUserBooks": {
+              url: urlBase + "/users/:id/abUserBooks",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#prototype$__count__abUserBooks
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Counts abUserBooks of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "prototype$__count__abUserBooks": {
+              url: urlBase + "/users/:id/abUserBooks/count",
               method: "GET",
             },
 
@@ -12963,6 +13215,148 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.Audiobook#syncAudioBooks
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `sync` – `{String=}` - album from google play
+             */
+            "syncAudioBooks": {
+              url: urlBase + "/audiobooks/syncAlbums",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getCategories
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `categories` – `{Array=}` - The array of audiobook data objects
+             */
+            "getCategories": {
+              url: urlBase + "/audiobooks/getCategories",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getSubcategories
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `categoryName` – `{String=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `subcategories` – `{Array=}` - The array of audiobook data objects
+             */
+            "getSubcategories": {
+              url: urlBase + "/audiobooks/getSubcategories",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Audiobook#getList
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `category` – `{String=}` - one of: new, favourite, lastHeard, author, title
+             *
+             *  - `subcategory` – `{String=}` - subcategory according to one category
+             *
+             *  - `filter` – `{Object=}` - query filter object
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookDetails` – `{Array=}` - The array of audiobook data objects
+             */
+            "getList": {
+              url: urlBase + "/audiobooks/getList",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.Audiobook#isFavourite
              * @methodOf lbServices.Audiobook
              *
@@ -13032,46 +13426,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "addFavourite": {
               url: urlBase + "/audiobooks/addFavourite",
               method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Audiobook#getList
-             * @methodOf lbServices.Audiobook
-             *
-             * @description
-             *
-             * <em>
-             * (The remote method definition does not provide any description.)
-             * </em>
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `category` – `{String=}` - one of: new, favourite, lastHeard, author, title
-             *
-             *  - `subcategory` – `{String=}` -
-             *
-             *  - `skip` – `{Number=}` -
-             *
-             *  - `limit` – `{Number=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `bookDetails` – `{Array=}` - The array of audiobook data objects
-             */
-            "getList": {
-              url: urlBase + "/audiobooks",
-              method: "GET",
             },
 
             /**
@@ -13149,75 +13503,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "setProgress": {
               url: urlBase + "/audiobooks/setProgress",
               method: "PUT",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Audiobook#getCategories
-             * @methodOf lbServices.Audiobook
-             *
-             * @description
-             *
-             * <em>
-             * (The remote method definition does not provide any description.)
-             * </em>
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `categories` – `{Array=}` - The array of audiobook data objects
-             */
-            "getCategories": {
-              url: urlBase + "/audiobooks/getCategories",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Audiobook#getSubcategories
-             * @methodOf lbServices.Audiobook
-             *
-             * @description
-             *
-             * <em>
-             * (The remote method definition does not provide any description.)
-             * </em>
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `categoryName` – `{String=}` - self explainatory
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `subcategories` – `{Array=}` - The array of audiobook data objects
-             */
-            "getSubcategories": {
-              url: urlBase + "/audiobooks/getSubcategories",
-              method: "GET",
             },
           }
         );
