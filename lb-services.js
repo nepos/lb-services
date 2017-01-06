@@ -13357,6 +13357,40 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
+             * @name lbServices.Audiobook#getContent
+             * @methodOf lbServices.Audiobook
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `bookId` – `{Number=}` - id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `bookContent` – `{Object=}` - The array of audiobook data objects
+             */
+            "getContent": {
+              url: urlBase + "/audiobooks/getContent",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
              * @name lbServices.Audiobook#isFavourite
              * @methodOf lbServices.Audiobook
              *
@@ -13426,40 +13460,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "addFavourite": {
               url: urlBase + "/audiobooks/addFavourite",
               method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Audiobook#getContent
-             * @methodOf lbServices.Audiobook
-             *
-             * @description
-             *
-             * <em>
-             * (The remote method definition does not provide any description.)
-             * </em>
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `bookId` – `{Number=}` - id
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `bookContent` – `{Object=}` - The array of audiobook data objects
-             */
-            "getContent": {
-              url: urlBase + "/audiobooks/getContent",
-              method: "GET",
             },
 
             /**
