@@ -13352,7 +13352,7 @@ module.factory("lbAudiobook",
          *
          *  - `chapterId` – `{Number=}` - chapter id
          *
-         *  - `res` – `{object=}` - 
+         *  - `res` – `{object=}` - YOU MUST NOT PASS THIS ARGUMENT
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -13375,40 +13375,6 @@ module.factory("lbAudiobook",
 
         /**
          * @ngdoc method
-         * @name lbServices.Audiobook#isFavourite
-         * @methodOf lbServices.Audiobook
-         *
-         * @description
-         *
-         * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `audiobookId` – `{Number=}` - the id of audiobook (0 < id < 31)
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `isFavourite` – `{Boolean=}` - self explainatory
-         */
-        "isFavourite": {
-          url: urlBase + "/audiobooks/isFavourite",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
          * @name lbServices.Audiobook#addFavourite
          * @methodOf lbServices.Audiobook
          *
@@ -13425,7 +13391,7 @@ module.factory("lbAudiobook",
          *
          * @param {Object} postData Request data.
          *
-         *  - `audiobookId` – `{Number=}` - The id of audiobook (0 < id < 31)
+         *  - `audiobookId` – `{Number=}` - audiobook id
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -13439,11 +13405,50 @@ module.factory("lbAudiobook",
          *
          * Data properties:
          *
-         *  - `audiobookDetail` – `{Object=}` - The audiobookDetail object
+         *  - `userBookObj` – `{Object=}` - The userBook object
          */
         "addFavourite": {
           url: urlBase + "/audiobooks/addFavourite",
-          method: "POST"
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Audiobook#updateLastHeard
+         * @methodOf lbServices.Audiobook
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `audiobookId` – `{Number=}` - audiobook id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `userBookObj` – `{Object=}` - The userBook object
+         */
+        "updateLastHeard": {
+          url: urlBase + "/audiobooks/updateLastHeard",
+          method: "PUT"
         },
 
         /**
@@ -13464,9 +13469,7 @@ module.factory("lbAudiobook",
          *
          * @param {Object} postData Request data.
          *
-         *  - `bookId` – `{Number=}` - id
-         *
-         *  - `chapter` – `{Number=}` - cahpter
+         *  - `chapterId` – `{Number=}` - chapter id
          *
          *  - `time` – `{Number=}` - time in seconds
          *
@@ -13482,10 +13485,44 @@ module.factory("lbAudiobook",
          *
          * Data properties:
          *
-         *  - `bookContent` – `{Object=}` - The array of audiobook data objects
+         *  - `userBookObj` – `{Object=}` - The userBook object
          */
         "setProgress": {
           url: urlBase + "/audiobooks/setProgress",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Audiobook#removeFavouriteList
+         * @methodOf lbServices.Audiobook
+         *
+         * @description
+         *
+         * remove favorite audiobook list for current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `audiobookIdList` – `{*=}` - array of audiobook id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method does not accept any data. Supply an empty object.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "removeFavouriteList": {
+          url: urlBase + "/audiobooks/removeFavourite",
           method: "PUT"
         },
       }
