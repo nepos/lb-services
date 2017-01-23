@@ -1114,6 +1114,121 @@ module.factory("lbUser",
 
         /**
          * @ngdoc method
+         * @name lbServices.User#prototype$__findById__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Find a related item by id for nfUserArticles.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for nfUserArticles
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__findById__nfUserArticles": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/nfUserArticles/:fk",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__destroyById__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Delete a related item by id for nfUserArticles.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for nfUserArticles
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__destroyById__nfUserArticles": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/nfUserArticles/:fk",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__updateById__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Update a related item by id for nfUserArticles.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for nfUserArticles
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__updateById__nfUserArticles": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/nfUserArticles/:fk",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
          * @name lbServices.User#prototype$__get__accessTokens
          * @methodOf lbServices.User
          *
@@ -1706,6 +1821,143 @@ module.factory("lbUser",
          */
         "prototype$__count__abUserBooks": {
           url: urlBase + "/users/:id/abUserBooks/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__get__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Queries nfUserArticles of user.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__get__nfUserArticles": {
+          isArray: true,
+          url: urlBase + "/users/:id/nfUserArticles",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__create__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Creates a new instance in nfUserArticles of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__create__nfUserArticles": {
+          url: urlBase + "/users/:id/nfUserArticles",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__delete__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Deletes all nfUserArticles of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__delete__nfUserArticles": {
+          url: urlBase + "/users/:id/nfUserArticles",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__count__nfUserArticles
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Counts nfUserArticles of user.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "prototype$__count__nfUserArticles": {
+          url: urlBase + "/users/:id/nfUserArticles/count",
           method: "GET"
         },
 
@@ -11978,6 +12230,43 @@ module.factory("lbVideocall",
           method: "GET"
         },
 
+        /**
+         * @ngdoc method
+         * @name lbServices.Videocall#alive
+         * @methodOf lbServices.Videocall
+         *
+         * @description
+         *
+         * post the date of the call for the given token
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `aAppointmentToken` – `{String=}` - videocall token for identification
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `aDate` – `{String=}` - the inserted date in the database
+         */
+        "alive": {
+          url: urlBase + "/videocalls/alive",
+          method: "POST"
+        },
+
         // INTERNAL. Use User.videocalls.findById() instead.
         "::findById::user::videocalls": {
           params: {
@@ -12618,6 +12907,40 @@ module.factory("lbBookmark",
          */
         "getCategoryList": {
           url: urlBase + "/bookmarks/categories",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Bookmark#getReadingView
+         * @methodOf lbServices.Bookmark
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `url` – `{string=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `page` – `{object=}` - 
+         */
+        "getReadingView": {
+          url: urlBase + "/bookmarks/readable",
           method: "GET"
         },
       }
@@ -13540,6 +13863,147 @@ module.factory("lbAudiobook",
     * i.e. `Audiobook`.
     */
     R.modelName = "Audiobook";
+
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Newsfeed
+ * @header lbServices.Newsfeed
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Newsfeed` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory("lbNewsfeed",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/newsfeeds/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#sync
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * synchronise neposFeedList with the database
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `sync` – `{String=}` - success message
+         */
+        "sync": {
+          url: urlBase + "/newsfeeds/sync",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getFeeds
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * get feed list
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `categoryId` – `{Number=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `feedList` – `{Array=}` - list of feeds with key and label
+         */
+        "getFeeds": {
+          url: urlBase + "/newsfeeds/getFeeds",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getCategories
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * get category list
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `categoryList` – `{Array=}` - list of categories with key and label
+         */
+        "getCategories": {
+          url: urlBase + "/newsfeeds/getCategories",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Newsfeed#modelName
+    * @propertyOf lbServices.Newsfeed
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Newsfeed`.
+    */
+    R.modelName = "Newsfeed";
 
 
     return R;
