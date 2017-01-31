@@ -12246,7 +12246,7 @@ module.factory("lbVideocall",
          *
          * @param {Object} postData Request data.
          *
-         *  - `aAppointmentToken` – `{String=}` - videocall token for identification
+         *  - `token` – `{String=}` - the videocall appointment token for identification
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -13987,6 +13987,40 @@ module.factory("lbNewsfeed",
          */
         "getCategories": {
           url: urlBase + "/newsfeeds/getCategories",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getByFeed
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * get article list by feed
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `feedId` – `{Number=}` - 
+         *
+         *  - `skipLimit` – `{Object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `articleList` – `{Array=}` - list of articles
+         */
+        "getByFeed": {
+          url: urlBase + "/newsfeeds/getByFeed",
           method: "GET"
         },
       }
