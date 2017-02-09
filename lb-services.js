@@ -12746,7 +12746,7 @@ module.factory("lbBookmark",
          *
          * @description
          *
-         * create bookmark for current user
+         * [postInitUser] create default bookmark list for current user
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -12783,7 +12783,7 @@ module.factory("lbBookmark",
          *
          * @description
          *
-         * create bookmark for current user
+         * [postHistory] create a history item for current user
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -12917,9 +12917,7 @@ module.factory("lbBookmark",
          *
          * @description
          *
-         * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
+         * don't use - just for testing purposes
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -12942,6 +12940,67 @@ module.factory("lbBookmark",
         "getReadingView": {
           url: urlBase + "/bookmarks/readable",
           method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Bookmark#deleteAllHistory
+         * @methodOf lbServices.Bookmark
+         *
+         * @description
+         *
+         * [deleteAllHistory] delete history for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteAllHistory": {
+          url: urlBase + "/bookmarks/history",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Bookmark#deleteBookmarks
+         * @methodOf lbServices.Bookmark
+         *
+         * @description
+         *
+         * [deleteBookmarks] delete a bookmark list for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `bookmarkIds` – `{*}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteBookmarks": {
+          url: urlBase + "/bookmarks",
+          method: "DELETE"
         },
       }
     );
@@ -13899,7 +13958,7 @@ module.factory("lbNewsfeed",
          *
          * @description
          *
-         * synchronise neposFeedList with the database
+         * sync
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -13932,11 +13991,11 @@ module.factory("lbNewsfeed",
          *
          * @description
          *
-         * get feed list
+         * getFeeds
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `categoryId` – `{Number=}` - 
+         *  - `categoryId` – `{Number}` - 
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -13953,7 +14012,7 @@ module.factory("lbNewsfeed",
          *  - `feedList` – `{Array=}` - list of feeds with key and label
          */
         "getFeeds": {
-          url: urlBase + "/newsfeeds/getFeeds",
+          url: urlBase + "/newsfeeds/categories/:categoryId/feeds",
           method: "GET"
         },
 
@@ -13964,7 +14023,7 @@ module.factory("lbNewsfeed",
          *
          * @description
          *
-         * get category list
+         * getCategories
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -13986,7 +14045,7 @@ module.factory("lbNewsfeed",
          *  - `categoryList` – `{Array=}` - list of categories with key and label
          */
         "getCategories": {
-          url: urlBase + "/newsfeeds/getCategories",
+          url: urlBase + "/newsfeeds/categories",
           method: "GET"
         },
 
@@ -13997,11 +14056,11 @@ module.factory("lbNewsfeed",
          *
          * @description
          *
-         * get article list by feed
+         * getByFeed
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `feedId` – `{Number=}` - 
+         *  - `feedId` – `{Number}` - 
          *
          *  - `skipLimit` – `{Object=}` - 
          *
@@ -14020,7 +14079,108 @@ module.factory("lbNewsfeed",
          *  - `articleList` – `{Array=}` - list of articles
          */
         "getByFeed": {
-          url: urlBase + "/newsfeeds/getByFeed",
+          url: urlBase + "/newsfeeds/feeds/:feedId/articles",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getByCategory
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * getByCategory
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `categoryId` – `{Number=}` - 
+         *
+         *  - `skipLimit` – `{Object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `articleList` – `{Array=}` - list of articles
+         */
+        "getByCategory": {
+          url: urlBase + "/newsfeeds/categories/:categoryId/articles",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#putArticles
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * putArticles
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "putArticles": {
+          url: urlBase + "/newsfeeds/articles",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getArticle
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * getArticle
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `articleId` – `{number}` - article id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `article` – `{Object=}` - article object
+         */
+        "getArticle": {
+          url: urlBase + "/newsfeeds/articles/:articleId",
           method: "GET"
         },
       }
