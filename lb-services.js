@@ -747,33 +747,6 @@ module.factory("lbUser",
           method: "PUT"
         },
 
-        // INTERNAL. Use User.mailaccounts.findById() instead.
-        "prototype$__findById__mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use User.mailaccounts.destroyById() instead.
-        "prototype$__destroyById__mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use User.mailaccounts.updateById() instead.
-        "prototype$__updateById__mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "PUT"
-        },
-
         // INTERNAL. Use User.messages.findById() instead.
         "prototype$__findById__messages": {
           params: {
@@ -1229,6 +1202,121 @@ module.factory("lbUser",
 
         /**
          * @ngdoc method
+         * @name lbServices.User#prototype$__findById__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Find a related item by id for trDealFavourites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for trDealFavourites
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__findById__trDealFavourites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/trDealFavourites/:fk",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__destroyById__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Delete a related item by id for trDealFavourites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for trDealFavourites
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__destroyById__trDealFavourites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/trDealFavourites/:fk",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__updateById__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Update a related item by id for trDealFavourites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for trDealFavourites
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__updateById__trDealFavourites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/users/:id/trDealFavourites/:fk",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
          * @name lbServices.User#prototype$__get__accessTokens
          * @methodOf lbServices.User
          *
@@ -1422,31 +1510,6 @@ module.factory("lbUser",
          */
         "prototype$__count__bookmarklinks": {
           url: urlBase + "/users/:id/bookmarklinks/count",
-          method: "GET"
-        },
-
-        // INTERNAL. Use User.mailaccounts() instead.
-        "prototype$__get__mailaccounts": {
-          isArray: true,
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "GET"
-        },
-
-        // INTERNAL. Use User.mailaccounts.create() instead.
-        "prototype$__create__mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "POST"
-        },
-
-        // INTERNAL. Use User.mailaccounts.destroyAll() instead.
-        "prototype$__delete__mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use User.mailaccounts.count() instead.
-        "prototype$__count__mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts/count",
           method: "GET"
         },
 
@@ -1958,6 +2021,143 @@ module.factory("lbUser",
          */
         "prototype$__count__nfUserArticles": {
           url: urlBase + "/users/:id/nfUserArticles/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__get__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Queries trDealFavourites of user.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__get__trDealFavourites": {
+          isArray: true,
+          url: urlBase + "/users/:id/trDealFavourites",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__create__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Creates a new instance in trDealFavourites of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        "prototype$__create__trDealFavourites": {
+          url: urlBase + "/users/:id/trDealFavourites",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__delete__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Deletes all trDealFavourites of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__delete__trDealFavourites": {
+          url: urlBase + "/users/:id/trDealFavourites",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.User#prototype$__count__trDealFavourites
+         * @methodOf lbServices.User
+         *
+         * @description
+         *
+         * Counts trDealFavourites of user.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "prototype$__count__trDealFavourites": {
+          url: urlBase + "/users/:id/trDealFavourites/count",
           method: "GET"
         },
 
@@ -3283,307 +3483,6 @@ module.factory("lbUser",
         R.contacts.updateById = function() {
           var TargetResource = $injector.get("lbContact");
           var action = TargetResource["::updateById::user::contacts"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.User.mailaccounts
-     * @header lbServices.User.mailaccounts
-     * @object
-     * @description
-     *
-     * The object `User.mailaccounts` groups methods
-     * manipulating `Mailaccount` instances related to `User`.
-     *
-     * Call {@link lbServices.User#mailaccounts User.mailaccounts()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User#mailaccounts
-         * @methodOf lbServices.User
-         *
-         * @description
-         *
-         * Queries mailaccounts of user.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `filter` – `{object=}` - 
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R.mailaccounts = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::get::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#count
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Counts mailaccounts of user.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        R.mailaccounts.count = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::count::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#create
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Creates a new instance in mailaccounts of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R.mailaccounts.create = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::create::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#createMany
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Creates a new instance in mailaccounts of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R.mailaccounts.createMany = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::createMany::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#destroyAll
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Deletes all mailaccounts of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.mailaccounts.destroyAll = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::delete::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#destroyById
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Delete a related item by id for mailaccounts.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for mailaccounts
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.mailaccounts.destroyById = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::destroyById::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#findById
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Find a related item by id for mailaccounts.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for mailaccounts
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R.mailaccounts.findById = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::findById::user::mailaccounts"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.User.mailaccounts#updateById
-         * @methodOf lbServices.User.mailaccounts
-         *
-         * @description
-         *
-         * Update a related item by id for mailaccounts.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - User id
-         *
-         *  - `fk` – `{*}` - Foreign key for mailaccounts
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R.mailaccounts.updateById = function() {
-          var TargetResource = $injector.get("lbMailaccount");
-          var action = TargetResource["::updateById::user::mailaccounts"];
           return action.apply(R, arguments);
         };
     /**
@@ -7796,118 +7695,6 @@ module.factory("lbMailaccount",
 
         /**
          * @ngdoc method
-         * @name lbServices.Mailaccount#replaceOrCreate
-         * @methodOf lbServices.Mailaccount
-         *
-         * @description
-         *
-         * Replace an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        "replaceOrCreate": {
-          url: urlBase + "/mailaccounts/replaceOrCreate",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Mailaccount#upsertWithWhere
-         * @methodOf lbServices.Mailaccount
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source based on the where criteria.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        "upsertWithWhere": {
-          url: urlBase + "/mailaccounts/upsertWithWhere",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Mailaccount#replaceById
-         * @methodOf lbServices.Mailaccount
-         *
-         * @description
-         *
-         * Replace attributes for a model instance and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        "replaceById": {
-          url: urlBase + "/mailaccounts/:id/replace",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
          * @name lbServices.Mailaccount#getStatus
          * @methodOf lbServices.Mailaccount
          *
@@ -8030,7 +7817,7 @@ module.factory("lbMailaccount",
          *
          * Data properties:
          *
-         *  - `threads` – `{Object=}` - User Mail-Threads
+         *  - `threads` – `{Object=}` - User MailAccount-Threads
          */
         "getThreadList": {
           url: urlBase + "/mailaccounts/threads",
@@ -8041,6 +7828,223 @@ module.factory("lbMailaccount",
          * @ngdoc method
          * @name lbServices.Mailaccount#send
          * @methodOf lbServices.Mailaccount
+         *
+         * @description
+         *
+         * send a E-MailAccount
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `email` – `{String=}` - receiver of the mail, new contact will be created, if not present
+         *
+         *  - `subject` – `{String=}` - optional subject of message
+         *
+         *  - `body` – `{String=}` - mail body
+         *
+         *  - `fileIdList` – `{Array=}` - file id list for attachment
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `draft` – `{Object=}` - sent draft data
+         */
+        "send": {
+          url: urlBase + "/mailaccounts/send",
+          method: "POST"
+        },
+      }
+    );
+
+
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Mailaccount#modelName
+    * @propertyOf lbServices.Mailaccount
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Mailaccount`.
+    */
+    R.modelName = "Mailaccount";
+
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Mail
+ * @header lbServices.Mail
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Mail` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory("lbMail",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/mails/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Mail#getStatus
+         * @methodOf lbServices.Mail
+         *
+         * @description
+         *
+         * check connect state of email address
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `email` – `{String=}` - email address
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `status` – `{Object=}` - give the connect state (true/false)
+         */
+        "getStatus": {
+          url: urlBase + "/mails/status",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Mail#getConnect
+         * @methodOf lbServices.Mail
+         *
+         * @description
+         *
+         * give the authenticate redirect url
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `email` – `{String=}` - email address for the user
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `uri` – `{String=}` - give the redirect callback url for client
+         */
+        "getConnect": {
+          url: urlBase + "/mails/connect",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Mail#getCallback
+         * @methodOf lbServices.Mail
+         *
+         * @description
+         *
+         * mNylasComponent callback for authenticate query
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `code` – `{String=}` - security code from mNylasComponent
+         *
+         *  - `state` – `{String=}` - intern user identifer
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `uri` – `{String=}` - url of the mNylasComponent security web-site
+         */
+        "getCallback": {
+          url: urlBase + "/mails/callback",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Mail#getThreadList
+         * @methodOf lbServices.Mail
+         *
+         * @description
+         *
+         * give all Threads from User
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `threads` – `{Object=}` - User Mail-Threads
+         */
+        "getThreadList": {
+          url: urlBase + "/mails/threads",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Mail#send
+         * @methodOf lbServices.Mail
          *
          * @description
          *
@@ -8076,117 +8080,24 @@ module.factory("lbMailaccount",
          *  - `draft` – `{Object=}` - sent draft data
          */
         "send": {
-          url: urlBase + "/mailaccounts/send",
+          url: urlBase + "/mails/send",
           method: "POST"
-        },
-
-        // INTERNAL. Use User.mailaccounts.findById() instead.
-        "::findById::user::mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use User.mailaccounts.destroyById() instead.
-        "::destroyById::user::mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use User.mailaccounts.updateById() instead.
-        "::updateById::user::mailaccounts": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/users/:id/mailaccounts/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use User.mailaccounts() instead.
-        "::get::user::mailaccounts": {
-          isArray: true,
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "GET"
-        },
-
-        // INTERNAL. Use User.mailaccounts.create() instead.
-        "::create::user::mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "POST"
-        },
-
-        // INTERNAL. Use User.mailaccounts.createMany() instead.
-        "::createMany::user::mailaccounts": {
-          isArray: true,
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "POST"
-        },
-
-        // INTERNAL. Use User.mailaccounts.destroyAll() instead.
-        "::delete::user::mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use User.mailaccounts.count() instead.
-        "::count::user::mailaccounts": {
-          url: urlBase + "/users/:id/mailaccounts/count",
-          method: "GET"
         },
       }
     );
 
 
 
-        /**
-         * @ngdoc method
-         * @name lbServices.Mailaccount#patchOrCreateWithWhere
-         * @methodOf lbServices.Mailaccount
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source based on the where criteria.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Mailaccount` object.)
-         * </em>
-         */
-        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
-
 
     /**
     * @ngdoc property
-    * @name lbServices.Mailaccount#modelName
-    * @propertyOf lbServices.Mailaccount
+    * @name lbServices.Mail#modelName
+    * @propertyOf lbServices.Mail
     * @description
     * The name of the model represented by this $resource,
-    * i.e. `Mailaccount`.
+    * i.e. `Mail`.
     */
-    R.modelName = "Mailaccount";
+    R.modelName = "Mail";
 
 
     return R;
@@ -11997,6 +11908,41 @@ module.factory("lbVideocall",
 
         /**
          * @ngdoc method
+         * @name lbServices.Videocall#postCancel
+         * @methodOf lbServices.Videocall
+         *
+         * @description
+         *
+         * Cancel the videocall. Only the corresponding user is allowed to cancel the call.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `id` – `{Integer=}` - Videocall Id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "postCancel": {
+          url: urlBase + "/videocalls/cancel",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
          * @name lbServices.Videocall#getList
          * @methodOf lbServices.Videocall
          *
@@ -13881,7 +13827,7 @@ module.factory("lbAudiobook",
          *
          * @description
          *
-         * remove favorite audiobook list for current user
+         * remove favourite audiobook list for current user
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -13986,38 +13932,6 @@ module.factory("lbNewsfeed",
 
         /**
          * @ngdoc method
-         * @name lbServices.Newsfeed#getFeeds
-         * @methodOf lbServices.Newsfeed
-         *
-         * @description
-         *
-         * getFeeds
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `categoryId` – `{Number}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `feedList` – `{Array=}` - list of feeds with key and label
-         */
-        "getFeeds": {
-          url: urlBase + "/newsfeeds/categories/:categoryId/feeds",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
          * @name lbServices.Newsfeed#getCategories
          * @methodOf lbServices.Newsfeed
          *
@@ -14046,6 +13960,38 @@ module.factory("lbNewsfeed",
          */
         "getCategories": {
           url: urlBase + "/newsfeeds/categories",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Newsfeed#getFeeds
+         * @methodOf lbServices.Newsfeed
+         *
+         * @description
+         *
+         * getFeeds
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `categoryId` – `{Number}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `feedList` – `{Array=}` - list of feeds with key and label
+         */
+        "getFeeds": {
+          url: urlBase + "/newsfeeds/categories/:categoryId/feeds",
           method: "GET"
         },
 
@@ -14198,6 +14144,343 @@ module.factory("lbNewsfeed",
     * i.e. `Newsfeed`.
     */
     R.modelName = "Newsfeed";
+
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Travel
+ * @header lbServices.Travel
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Travel` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory("lbTravel",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/travels/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getHrsInfo
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getHrsInfo] Get basic information about HRS such as imprint, privacy policy and terms of service
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `hrsInfo` – `{object=}` - JSON object which contains HRS info attributes
+         */
+        "getHrsInfo": {
+          url: urlBase + "/travels/hrsinfo",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getPicturesById
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getPicturesById] Get hotel picture list
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `hotelId` – `{number}` - hotel id
+         *
+         *  - `skipLimit` – `{object=}` - skip/limit filter
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `pictures` – `{*=}` - list of picture object
+         */
+        "getPicturesById": {
+          url: urlBase + "/travels/hotels/:hotelId/pictures",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getCategories
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getCategories] Get list of all deals categories
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `excludeEmpty` – `{Boolean=}` - exclude categories which do not contain any deals if set to true
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `categories` – `{*=}` - list of deals categories
+         */
+        "getCategories": {
+          url: urlBase + "/travels/deals/categories",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getById
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getById] Get deal details for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `dealId` – `{number}` - deal id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `deal` – `{object=}` - deal object
+         */
+        "getById": {
+          url: urlBase + "/travels/deals/:dealId",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getByCategory
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getByCategory] Get all deals contained in a given category
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `categoryId` – `{string}` - category id
+         *
+         *  - `skipLimit` – `{object=}` - skip/limit filter
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `deals` – `{*=}` - list of deals
+         */
+        "getByCategory": {
+          url: urlBase + "/travels/deals/categories/:categoryId",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#addFavourites
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [addFavourites] add deals to favourites for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "addFavourites": {
+          url: urlBase + "/travels/deals/favourites",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#removeFavourites
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [removeFavourites] remove deals from favourites for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `dealIds` – `{*}` - deal id list
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "removeFavourites": {
+          url: urlBase + "/travels/deals/favourites",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getFavourites
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getFavourites] get favourite deals for the current user
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `skipLimit` – `{object=}` - skip/limit filter
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `deals` – `{*=}` - list of deals
+         */
+        "getFavourites": {
+          url: urlBase + "/travels/deals/favourites",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Travel#getAllDeals
+         * @methodOf lbServices.Travel
+         *
+         * @description
+         *
+         * [getAllDeals] Get all deals
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `skipLimit` – `{object=}` - skip/limit filter
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `deals` – `{*=}` - list of deals
+         */
+        "getAllDeals": {
+          url: urlBase + "/travels/deals",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Travel#modelName
+    * @propertyOf lbServices.Travel
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Travel`.
+    */
+    R.modelName = "Travel";
 
 
     return R;
